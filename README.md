@@ -52,6 +52,29 @@ Redigera
 - 🔌 Extensible content types: recipes, workouts, travel, and more
 - 🤝 Potential for integration with third-party content APIs
 
+/matchify
+  /backend
+    /Controllers
+    /Models
+    /Services
+    /Data
+    /Hubs
+    Program.cs
+    Startup.cs
+    appsettings.json
+  /frontend
+    /src
+      /components
+      /screens
+      /navigation
+      /services
+      /assets
+    App.js
+    app.json
+  /docs
+  README.md
+  .gitignore
+
 ---
 
 ## ⚙️ Setup Instructions
