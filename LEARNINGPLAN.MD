@@ -4,7 +4,7 @@
 
 ### Basics of Web & Mobile Development
 - [ ] Understand the difference between **web apps** and **mobile apps**
-- [ ] Learn basic **HTML, CSS, and JavaScript** concepts (just the fundamentals)
+- [ ] Learn basic **HTML, CSS, and Typescript** concepts (just the fundamentals)
 
 ### React Native (Frontend)
 - [ ] Learn what **React Native** is and how it differs from React for web
