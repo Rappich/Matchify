@@ -16,9 +16,9 @@ This project serves as a **proof of concept** for a flexible and extensible "swi
 
 Users can log in, swipe through content (e.g., recipes or movies), and match with others who like the same things. It’s designed to work on top of various data sources and content types.
 
-### 🎯 MVP Focus: Travel Match
+### 🎯 MVP Focus: Entertainment Match
 
-The pilot version focuses on travel inspiration. Users swipe through travel destinations, and when a mutual right-swipe occurs, they unlock a shared favorites view, chat, and suggested itineraries.
+The pilot version focuses on entertainment inspiration. Users swipe through movies/series, and when a mutual right-swipe occurs, they unlock a shared favorites list with details about the movie/serie.
 
 ---
 
