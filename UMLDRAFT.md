@@ -1,97 +1,118 @@
-UML Class Diagram Description
-User
+# UML Class Diagram Description
 
-Attributes: userId, username, email, passwordHash, profileImageUrl, preferences, createdAt
+## User
 
-Relationships:
+**Attributes:**  
+- `userId` (ObjectId)  
+- `username` (string)  
+- `email` (string)  
+- `passwordHash` (string)  
+- `profileImageUrl` (string)  
+- `preferences` (Map) — JSON key-value pairs for user settings  
+- `createdAt` (Date)  
 
-One-to-many with Swipe (a user can have many swipes)
+**Relationships:**  
+- One-to-many with `Swipe` (a user can have many swipes)  
+- Many-to-many with `Match` (a match always involves exactly two users)  
+- One-to-many with `ContentItem` (a user can create many content items)  
 
-Many-to-many with Match (a user can be in many matches)
+---
 
-One-to-many with ContentItem (user can create content)
+## ContentItem
 
-ContentItem
+**Attributes:**  
+- `contentId` (ObjectId)  
+- `type` (string) — e.g., recipe, travel, workout  
+- `title` (string)  
+- `description` (string)  
+- `images` (List) — list of image URLs  
+- `metadata` (Map) — flexible key-value pairs for extra info  
+- `createdBy` (ObjectId) — userId of creator  
+- `createdAt` (Date)  
 
-Attributes: contentId, type, title, description, images, metadata, createdBy, createdAt
+**Relationships:**  
+- One-to-many with `Swipe` (content can be swiped by many users)  
+- One-to-many with `Match` (content can be involved in many matches)  
 
-Relationships:
+---
 
-One-to-many with Swipe (content can be swiped by many users)
+## Swipe
 
-One-to-many with Match (matches linked to this content)
+**Attributes:**  
+- `swipeId` (ObjectId)  
+- `userId` (ObjectId)  
+- `contentId` (ObjectId)  
+- `direction` (string) — "left" or "right"  
+- `timestamp` (Date)  
 
-Swipe
+**Relationships:**  
+- Many-to-one to `User`  
+- Many-to-one to `ContentItem`  
 
-Attributes: swipeId, userId, contentId, direction, timestamp
+---
 
-Relationships:
+## Match
 
-Many-to-one to User
+**Attributes:**  
+- `matchId` (ObjectId)  
+- `userIds` (List) — exactly two userIds involved in the match  
+- `contentId` (ObjectId)  
+- `matchedAt` (Date)  
 
-Many-to-one to ContentItem
+**Relationships:**  
+- Many-to-many with `User` (exactly two users per match)  
+- Many-to-one with `ContentItem`  
 
-Match
+---
 
-Attributes: matchId, userIds (two users), contentId, matchedAt
+# PlantUML Code
 
-Relationships:
-
-Many-to-many with User (two users per match)
-
-Many-to-one with ContentItem
-
-PlantUML Code
-plantuml
-Kopiera
-Redigera
+```plantuml
 @startuml
+' User entity
 class User {
   +ObjectId userId
   +String username
   +String email
   +String passwordHash
   +String profileImageUrl
-  +Map preferences
+  +Map preferences  ' JSON key-value pairs for user settings
   +Date createdAt
 }
 
+' ContentItem entity
 class ContentItem {
   +ObjectId contentId
-  +String type
+  +String type      ' e.g., recipe, travel, workout
   +String title
   +String description
-  +List images
-  +Map metadata
+  +List images      ' List of image URLs
+  +Map metadata     ' Flexible key-value pairs
   +ObjectId createdBy
   +Date createdAt
 }
 
+' Swipe entity
 class Swipe {
   +ObjectId swipeId
   +ObjectId userId
   +ObjectId contentId
-  +String direction
+  +String direction  ' "left" or "right"
   +Date timestamp
 }
 
+' Match entity
 class Match {
   +ObjectId matchId
-  +List userIds
+  +List userIds     ' Exactly 2 users per match
   +ObjectId contentId
   +Date matchedAt
 }
 
+' Relationships
 User "1" -- "0..*" Swipe : makes >
 ContentItem "1" -- "0..*" Swipe : receives >
 User "1" -- "0..*" ContentItem : creates >
 Match "1" -- "2" User : involves >
 ContentItem "1" -- "0..*" Match : relates to >
 @enduml
-How to view this diagram
-Copy the PlantUML code above.
-
-Use an online PlantUML editor like PlantText or PlantUML Visualizer to paste and render it.
-
-You get a neat class diagram visualizing your data model.
-
