@@ -26,7 +26,7 @@ The pilot version focuses on entertainment inspiration. Users swipe through movi
 
 - 🍿 **“What should we watch?”** – Match Netflix-style content with a friend or partner
 - 🥘 **“What should we eat?”** – Swipe and match ICA recipes for dinner ideas
-- 💼 **“Who’s the right fit?”** – Match job seekers and employers based on preferences or skills
+- 💼 **“Who’s the right fit?”** – Match job seekers and employers based on preference, experience & skills, completly anonymous
 - 📚 **“Where should we travel?”** – Swipe through travel destinations and match with others in your community
 
 ---
