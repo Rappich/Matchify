@@ -1,7 +1,7 @@
 # Project Roadmap
 
 ## Milestone 1: Project Setup & Basic Infrastructure
-- [ ] Set up project repository on **GitHub** or **GitLab**  
+- [x] Set up project repository on **GitHub** or **GitLab**  
   - Initialize Git repository  
   - Create `.gitignore` and basic README  
 - [ ] Initialize React Native app with **Expo**  

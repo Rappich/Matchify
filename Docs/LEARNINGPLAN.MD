@@ -25,13 +25,13 @@
 - [ ] Learn about **SignalR** for real-time communication basics
 
 ### Database (MongoDB)
-- [ ] Understand **NoSQL vs SQL** basics  
+- [x] Understand **NoSQL vs SQL** basics  
 - [ ] Learn how MongoDB stores data (collections, documents)  
 - [ ] Explore basic **CRUD operations** in MongoDB  
 - [ ] Learn how to design **simple data models** in MongoDB
 
-### DevOps & Infrastructure (New!)
-- [ ] Learn basics of **Linux** command line and file system (Ubuntu preferred)  
+### DevOps & Infrastructure
+- [x] Learn basics of **Linux** command line and file system (Ubuntu preferred)  
 - [ ] Understand **GitLab CI/CD** workflows and pipeline setup  
 - [ ] Learn **Docker** fundamentals: containers, images, Dockerfiles, and Compose  
 - [ ] Understand **Ansible** for infrastructure provisioning and configuration management  
@@ -45,7 +45,7 @@
 - [ ] Learn what **OAuth** and **JWT** are, at a high level  
 - [ ] Understand what **real-time communication** means and use cases  
 - [ ] Learn basic **API testing** with tools like Postman or Insomnia  
-- [ ] Understand version control basics (**Git**, GitHub/GitLab)
+- [x] Understand version control basics (**Git**, GitHub/GitLab)
 
 ---
 
