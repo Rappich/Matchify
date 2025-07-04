@@ -1,14 +1,11 @@
-# Technical Plan – Matchify Swipe-to-Match Platform
+Technical Plan – Matchify Swipe-to-Match Platform
+1. Overview
+Matchify is a proof-of-concept mobile app and backend platform for swiping and matching users with various types of content (recipes, travel destinations, workouts, movies, etc.). The platform is designed to be flexible, extensible, and adaptable to different target groups and content databases, supporting real-time matching and integration with external content providers.
 
-## 1. Overview
-
-Matchify is a mobile app and backend platform for swiping and matching users with different types of content (recipes, travel destinations, workouts, etc.). The platform is designed to be flexible and scalable, supporting real-time matching and integration with external content databases.
-
----
-
-## 2. System Architecture
-
-```plaintext
+2. System Architecture
+plaintext
+Copy
+Edit
 [React Native Mobile App (Expo)]
          ↕ REST API + SignalR
     [ASP.NET Core Web API Server]
@@ -16,50 +13,61 @@ Matchify is a mobile app and backend platform for swiping and matching users wit
          ↕ External Content APIs (optional)
 Frontend: React Native app built with Expo for cross-platform (iOS and Android).
 
-Backend: ASP.NET Core Web API handling authentication, API endpoints, business logic, and real-time communication with SignalR.
+Backend: ASP.NET Core Web API handles authentication, API endpoints, business logic, and real-time communication via SignalR.
 
-Database: MongoDB Atlas storing users, content, swipes, and matches.
+Database: MongoDB Atlas stores users, content, swipes, and matches.
 
-External API: Optional integration layer for fetching and normalizing third-party data.
+External APIs: Optional integration layer for fetching and normalizing third-party content data.
+
+DevOps & Infrastructure: Docker containers for backend and database, CI/CD pipelines via GitHub Actions or GitLab CI, and infrastructure automation with Ansible for repeatable deployments.
 
 3. Key Components
 3.1 Frontend (React Native)
-Swipe UI: Displays content cards for users to swipe right/left.
+Swipe UI: Dynamic content cards for user swiping gestures.
 
-Authentication: JWT-based login and registration.
+Authentication: JWT-based login and registration flows.
 
-Real-time updates: SignalR client to display matches instantly.
+Real-time updates: SignalR client for instant match notifications.
 
-Content Views: Dynamic views based on content type.
+Content Views: Adaptable views for different content types.
 
-Content Upload: Users can add new content items.
+Content Upload: Users can add new content with images.
 
 3.2 Backend (ASP.NET Core API)
-Authentication: JWT + OAuth support.
+Authentication: JWT authentication with potential OAuth support.
 
-Content Management: CRUD operations for content.
+Content Management: CRUD endpoints for content items.
 
-Swipe Management: Logs user swipes.
+Swipe Management: Record user swipe actions.
 
-Match Engine: Logic that identifies matches when two users swipe right on the same content.
+Match Engine: Detect mutual right-swipes to create matches.
 
-SignalR Hub: Pushes real-time notifications to clients upon matches.
+SignalR Hub: Push real-time notifications to clients on matches.
 
-External API Integration: Adapter layer for third-party data sources.
+External API Integration: Adapter layer to incorporate third-party content data.
 
 3.3 Database (MongoDB)
-Users: User profiles and authentication data.
+Users: Profile and authentication data.
 
-ContentItems: Content with metadata (type, title, images, descriptions, etc.).
+ContentItems: Flexible metadata-rich content entries.
 
-Swipes: Logs of user swipe decisions.
+Swipes: User swipe logs with direction and timestamp.
 
-Matches: Records linking two users to a content item when matched.
+Matches: Records of matched users and content.
+
+3.4 DevOps & Deployment
+Containerization: Docker images for backend and services.
+
+CI/CD: Automated pipelines for build, test, and deploy.
+
+Infrastructure Automation: Ansible playbooks for server setup and app deployment.
+
+Monitoring & Logging: Basic setups to ensure reliability and visibility.
 
 4. Data Models (Simplified)
 json
-Kopiera
-Redigera
+Copy
+Edit
 // User
 {
   "_id": "ObjectId",
@@ -67,18 +75,18 @@ Redigera
   "email": "string",
   "passwordHash": "string",
   "profileImageUrl": "string",
-  "preferences": { /* user preferences, e.g. content types */ },
+  "preferences": { /* user preferences */ },
   "createdAt": "Date"
 }
 
 // ContentItem
 {
   "_id": "ObjectId",
-  "type": "string", // e.g. recipe, travel, workout
+  "type": "string", // e.g., recipe, travel, workout, movie
   "title": "string",
   "description": "string",
   "images": ["string"], // URLs
-  "metadata": { /* flexible key-value for extra info */ },
+  "metadata": { /* flexible key-value pairs */ },
   "createdBy": "UserId",
   "createdAt": "Date"
 }
@@ -99,43 +107,39 @@ Redigera
   "contentId": "ContentItemId",
   "matchedAt": "Date"
 }
-5. API Endpoints (Example)
+5. API Endpoints (Examples)
 Method	Endpoint	Description
 POST	/api/auth/register	Register new user
-POST	/api/auth/login	Login user, returns JWT
-GET	/api/content	Get list of swipeable content items
-POST	/api/content/swipe	Submit a swipe (left/right)
-GET	/api/matches	Get list of matches for the user
+POST	/api/auth/login	User login, returns JWT
+GET	/api/content	Fetch swipeable content items
+POST	/api/content/swipe	Submit swipe decision (left/right)
+GET	/api/matches	Fetch user’s matches
 POST	/api/content	Upload new content item
 
 6. Real-time Communication
-SignalR Hub:
-Server pushes notifications about new matches to both users in real time.
+SignalR Hub: Server pushes notifications about new matches to clients in real time.
 
-Client:
-React Native app subscribes to the hub and displays notifications when a match occurs.
+Client: React Native subscribes to SignalR hub and updates UI instantly on match events.
 
 7. Security
-JWT is used for authentication and authorization.
+JWT authentication for stateless, secure access.
 
-HTTPS is required for all API calls.
+HTTPS enforced on all API endpoints.
 
-Passwords are stored as salted hashes.
+Passwords stored securely with salted hashing.
 
-CORS policy restricts backend access to authorized frontend apps.
+CORS configured to allow only authorized frontends.
 
-8. Development Plan
-Milestone 1: Set up backend with user management and content API.
+8. Development & Deployment Plan
+Follow detailed Project Roadmap milestones for iterative development.
 
-Milestone 2: Build basic swipe UI in React Native.
+Use Docker and Ansible to create reliable, repeatable deployment processes.
 
-Milestone 3: Implement swipe logic and match engine.
+Implement CI/CD pipelines (GitHub Actions/GitLab CI) for automated building, testing, and deploying.
 
-Milestone 4: Add real-time features with SignalR.
+Deploy initially to a staging environment before production release.
 
-Milestone 5: Implement content upload and external API integrations.
-
-Milestone 6: Testing, bug fixing, and release.
+Monitor app health and logs in production for early problem detection.
 
 9. Tools & Libraries
 Backend: ASP.NET Core, SignalR, MongoDB.Driver
@@ -144,13 +148,18 @@ Frontend: React Native, Expo, Axios, @microsoft/signalr
 
 Database: MongoDB Atlas
 
-Authentication: JWT, OAuth (optional)
+Authentication: JWT (OAuth optional)
+
+DevOps: Docker, GitHub Actions/GitLab CI, Ansible
 
 Development: Visual Studio, VS Code, Postman
 
 10. Notes
-This is a flexible platform designed for multiple content types.
+Designed for flexibility to support multiple content verticals (food, fitness, travel, entertainment, etc.)
 
-API and data models should be designed with extensibility in mind.
+Modular architecture to enable quick adaptation or expansion with new content types and external data sources
 
-Focus on user experience and real-time interaction.
+Focus on smooth user experience and real-time interactivity
+
+Emphasis on automated, reliable deployment and operations
+
