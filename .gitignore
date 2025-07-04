@@ -1,0 +1,68 @@
+# Node.js / React Native / Expo
+node_modules/
+.expo/
+.expo-shared/
+npm-debug.log*
+yarn-error.log*
+*.log
+*.tmp
+*.temp
+
+# React Native iOS/Android build outputs
+ios/build/
+android/app/build/
+*.keystore
+
+# Expo/React Native caches
+.expo/
+.expo-shared/
+
+# AsyncStorage (local datafiles)
+
+# Environment files (API-nyckeysklar, secrets)
+.env
+.env.local
+.env.*.local
+
+# Backend (.NET Core)
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vscode/
+.vs/
+*.db
+*.log
+
+# ASP.NET Core secret manager
+secrets.json
+
+# Docker
+docker-compose.override.yml
+*.env
+Dockerfile*
+
+# MongoDB (local database files)
+*.lock
+*.pid
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# Bash scripts (temporary files)
+*.swp
+
+# Git related
+.gitignore
+
+# OS-specifika filer
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
