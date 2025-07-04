@@ -4,25 +4,25 @@
 
 ---
 
-## 🌐 Vision
+## Vision
 
 Build a reusable, modular matchmaking engine that works across multiple verticals — food, fitness, entertainment, travel, education, and more. The platform is designed to integrate with external content providers, allowing it to plug into existing products and enrich them with a swipe-based, social discovery experience.
 
 ---
 
-## 🚀 Proof of Concept – A Universal Swipe-to-Match Layer
+## Proof of Concept – A Universal Swipe-to-Match Layer
 
 This project serves as a **proof of concept** for a flexible and extensible "swipe-to-match" engine. It acts as a complementary module to existing services (like Netflix, ICA, SF Anytime, learning platforms) — enabling social and interactive exploration of content.
 
 Users can log in, swipe through content (e.g., recipes or movies), and match with others who like the same things. It’s designed to work on top of various data sources and content types.
 
-### 🎯 MVP Focus: Entertainment Match
+### MVP Focus: Entertainment Match
 
 The pilot version focuses on entertainment inspiration. Users swipe through movies/series, and when a mutual right-swipe occurs, they unlock a shared favorites list with details about the movie/serie.
 
 ---
 
-## 🧠 Use Cases
+## Use Cases
 
 - 🍿 **“What should we watch?”** – Match Netflix-style content with a friend or partner
 - 🥘 **“What should we eat?”** – Swipe and match ICA recipes for dinner ideas
@@ -70,19 +70,19 @@ MongoDB Atlas (NoSQL)
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
-- 🔐 User registration and login (JWT)
-- 👆 Swipe left/right on dynamic content cards
-- 🔔 Real-time match notifications via SignalR
-- 🤝 Collaborative “match” features (shared lists, actions, chats)
-- 🖼️ Upload and browse custom content with metadata and images
-- 🔌 Extendable content types (recipes, workouts, movies, travel, etc.)
-- 🌍 Ready for external API integration
+-  User registration and login (JWT)
+-  Swipe left/right on dynamic content cards
+-  Real-time match notifications via SignalR
+-  Collaborative “match” features (shared lists, actions, chats)
+-  Upload and browse custom content with metadata and images
+-  Extendable content types (recipes, recruitment, movies, travel, etc.)
+-  Ready for external API integration
 
 ---
 
-## 🌱 Scalability & Reusability
+##  Scalability & Reusability
 
 Matchify is designed to work with **multiple data sources and content types**. To adapt the app to a new context, developers only need to:
 
@@ -95,7 +95,7 @@ This makes the app a powerful **plug-and-play interaction layer** on top of exis
 
 ---
 
-## 📦 File Structure
+##  File Structure
 
 /matchify
 /backend
