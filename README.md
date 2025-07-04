@@ -12,7 +12,7 @@ Build a reusable, modular matchmaking engine that works across multiple vertical
 
 ## Proof of Concept – A Universal Swipe-to-Match Layer
 
-This project serves as a **proof of concept** for a flexible and extensible "swipe-to-match" engine. It acts as a complementary module to existing services (like Netflix, ICA, SF Anytime, learning platforms) — enabling social and interactive exploration of content.
+This project serves as a **proof of concept** for a flexible and extensible "swipe-to-match" engine. It acts as a complementary module to existing services (like Netflix, ICA, SF Anytime, recruitment) — enabling social and interactive exploration of content.
 
 Users can log in, swipe through content (e.g., recipes or movies), and match with others who like the same things. It’s designed to work on top of various data sources and content types.
 
