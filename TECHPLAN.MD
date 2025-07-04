@@ -1,11 +1,14 @@
-Technical Plan – Matchify Swipe-to-Match Platform
-1. Overview
-Matchify is a proof-of-concept mobile app and backend platform for swiping and matching users with various types of content (recipes, travel destinations, workouts, movies, etc.). The platform is designed to be flexible, extensible, and adaptable to different target groups and content databases, supporting real-time matching and integration with external content providers.
+# Technical Plan – Matchify Swipe-to-Match Platform
 
-2. System Architecture
-plaintext
-Copy
-Edit
+## 1. Overview
+
+Matchify is a **proof-of-concept mobile app and backend platform** for swiping and matching users with various types of content (recipes, travel destinations, workouts, movies, etc.). The platform is designed to be **flexible, extensible, and adaptable** to different target groups and content databases, supporting real-time matching and integration with external content providers.
+
+---
+
+## 2. System Architecture
+
+```plaintext
 [React Native Mobile App (Expo)]
          ↕ REST API + SignalR
     [ASP.NET Core Web API Server]
@@ -163,3 +166,6 @@ Focus on smooth user experience and real-time interactivity
 
 Emphasis on automated, reliable deployment and operations
 
+vbnet
+Copy
+Edit
