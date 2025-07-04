@@ -36,7 +36,7 @@ Content Views: Adaptable views for different content types.
 
 Content Upload: Users can add new content with images.
 
-3.2 Backend (ASP.NET Core API)
+## 3.2 Backend (ASP.NET Core API)
 Authentication: JWT authentication with potential OAuth support.
 
 Content Management: CRUD endpoints for content items.
@@ -49,7 +49,7 @@ SignalR Hub: Push real-time notifications to clients on matches.
 
 External API Integration: Adapter layer to incorporate third-party content data.
 
-3.3 Database (MongoDB)
+## 3.3 Database (MongoDB)
 Users: Profile and authentication data.
 
 ContentItems: Flexible metadata-rich content entries.
@@ -58,7 +58,7 @@ Swipes: User swipe logs with direction and timestamp.
 
 Matches: Records of matched users and content.
 
-3.4 DevOps & Deployment
+## 3.4 DevOps & Deployment
 Containerization: Docker images for backend and services.
 
 CI/CD: Automated pipelines for build, test, and deploy.
@@ -67,10 +67,7 @@ Infrastructure Automation: Ansible playbooks for server setup and app deployment
 
 Monitoring & Logging: Basic setups to ensure reliability and visibility.
 
-4. Data Models (Simplified)
-json
-Copy
-Edit
+## 4. Data Models (Simplified)
 // User
 {
   "_id": "ObjectId",
@@ -110,7 +107,7 @@ Edit
   "contentId": "ContentItemId",
   "matchedAt": "Date"
 }
-5. API Endpoints (Examples)
+## 5. API Endpoints (Examples)
 Method	Endpoint	Description
 POST	/api/auth/register	Register new user
 POST	/api/auth/login	User login, returns JWT
@@ -119,12 +116,12 @@ POST	/api/content/swipe	Submit swipe decision (left/right)
 GET	/api/matches	Fetch user’s matches
 POST	/api/content	Upload new content item
 
-6. Real-time Communication
+## 6. Real-time Communication
 SignalR Hub: Server pushes notifications about new matches to clients in real time.
 
 Client: React Native subscribes to SignalR hub and updates UI instantly on match events.
 
-7. Security
+## 7. Security
 JWT authentication for stateless, secure access.
 
 HTTPS enforced on all API endpoints.
@@ -133,7 +130,7 @@ Passwords stored securely with salted hashing.
 
 CORS configured to allow only authorized frontends.
 
-8. Development & Deployment Plan
+## 8. Development & Deployment Plan
 Follow detailed Project Roadmap milestones for iterative development.
 
 Use Docker and Ansible to create reliable, repeatable deployment processes.
@@ -144,7 +141,7 @@ Deploy initially to a staging environment before production release.
 
 Monitor app health and logs in production for early problem detection.
 
-9. Tools & Libraries
+## 9. Tools & Libraries
 Backend: ASP.NET Core, SignalR, MongoDB.Driver
 
 Frontend: React Native, Expo, Axios, @microsoft/signalr
@@ -157,7 +154,7 @@ DevOps: Docker, GitHub Actions/GitLab CI, Ansible
 
 Development: Visual Studio, VS Code, Postman
 
-10. Notes
+## 10. Notes
 Designed for flexibility to support multiple content verticals (food, fitness, travel, entertainment, etc.)
 
 Modular architecture to enable quick adaptation or expansion with new content types and external data sources
