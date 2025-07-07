@@ -4,9 +4,9 @@
 - [x] Set up project repository on **GitHub** or **GitLab**  
   - Initialize Git repository  
   - Create `.gitignore` and basic README  
-- [ ] Initialize React Native app with **Expo**  
-- [ ] Set up ASP.NET Core Web API project  
-- [ ] Configure **MongoDB Atlas** cluster and connect backend  
+- [x] Initialize React Native app with **Expo**  
+- [x] Set up ASP.NET Core Web API project  
+- [x] Configure **MongoDB Atlas** cluster and connect backend  
 - [ ] Implement basic user registration and login API with **JWT authentication**  
 - [ ] Build simple login and registration screens in React Native  
 - [ ] Set up basic **Linux** environment (local VM or cloud) for development and deployment practice
