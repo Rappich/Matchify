@@ -1,4 +1,4 @@
-# Matchify – Swipe-to-Match Content Platform
+# Matchify – UNDER DEVELOPMENT
 
 **Matchify** is a mobile-first, swipe-to-match app platform where users swipe through various types of content — recipes, travel destinations, movies, workouts, or any custom content type. When two users both swipe right on the same item, they are matched and can explore the content together, unlocking features like shared lists, plans, or chats.
 
@@ -96,36 +96,13 @@ This makes the app a powerful **plug-and-play interaction layer** on top of exis
 ---
 
 ##  File Structure - Matchify
-/backend
-/Controllers
-/Models
-/Services
-/Data
-/Hubs
-Program.cs
-Startup.cs
-appsettings.json
+TBA
 
-/frontend
-/src
-/components
-/screens
-/navigation
-/services
-/assets
-App.js
-app.json
-
-/docs
-README.md
-technical-plan.md
-roadmap.md
-learning-plan.md
 
 
 ---
 
-## 🛠️ Setup Instructions
+## 🛠️ Setup Instructions - TBA
 
 ### Frontend (React Native with Expo)
 ```bash
