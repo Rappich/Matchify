@@ -24,14 +24,14 @@ The pilot version focuses on entertainment inspiration. Users swipe through movi
 
 ## Use Cases
 
-- 🍿 **“What should we watch?”** – Match Netflix-style content with a friend or partner
-- 🥘 **“What should we eat?”** – Swipe and match ICA recipes for dinner ideas
-- 💼 **“Who’s the right fit?”** – Match job seekers and employers based on preference, experience & skills, completly anonymous
-- 📚 **“Where should we travel?”** – Swipe through travel destinations and match with others in your community
+-  **“What should we watch?”** – Match Netflix-style content with a friend or partner
+-  **“What should we eat?”** – Swipe and match ICA recipes for dinner ideas
+-  **“Who’s the right fit?”** – Match job seekers and employers based on preference, experience & skills, completly anonymous
+-  **“Where should we travel?”** – Swipe through travel destinations and match with others in your community
 
 ---
 
-## ⚙️ Tech Stack
+##  Tech Stack
 
 ### Frontend – Mobile App (React Native)
 
@@ -60,7 +60,7 @@ The pilot version focuses on entertainment inspiration. Users swipe through movi
 - **Security:** JWT authentication, environment variables for secrets, and OWASP best practices 
 ---
 
-## 🧱 Architecture
+##  Architecture
 
 React Native (Expo)
 ⬇️ REST API + SignalR
@@ -95,9 +95,7 @@ This makes the app a powerful **plug-and-play interaction layer** on top of exis
 
 ---
 
-##  File Structure
-
-/matchify
+##  File Structure - Matchify
 /backend
 /Controllers
 /Models
@@ -136,10 +134,8 @@ git clone <your-repo>
 cd client
 npm install
 expo start
+
 Backend (.NET Core API)
-bash
-Copy
-Edit
 cd server
 dotnet restore
 dotnet run
@@ -156,11 +152,8 @@ POST	/api/content	Upload new content item
 
 🧪 Developer Tools
 Expo Go (mobile testing)
-
 MongoDB Atlas (cloud DB)
-
 Postman (API testing)
-
 VS Code / Visual Studio (backend)
 
 📚 Documentation
