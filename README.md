@@ -1,52 +1,53 @@
 # Matchify – UNDER DEVELOPMENT
 
-**Matchify** is a mobile-first, swipe-to-match app platform where users swipe through various types of content — recipes, travel destinations, movies, workouts, or any custom content type. When two users both swipe right on the same item, they are matched and can explore the content together, unlocking features like shared lists, plans, or chats.
+**Matchify** is a mobile-first, swipe-to-match platform where users browse through various types of content — such as recipes, travel destinations, movies, or workouts. When two users both swipe right on the same item, they are matched and can explore the content together using collaborative features like shared lists, plans, or chats.
+
+> _Note: This repository focuses on showcasing technical implementation and structure. Some business-critical features and architecture details are intentionally excluded to protect potential future commercial use._
 
 ---
 
 ## Vision
 
-Build a reusable, modular matchmaking engine that works across multiple verticals — food, fitness, entertainment, travel, education, and more. The platform is designed to integrate with external content providers, allowing it to plug into existing products and enrich them with a swipe-based, social discovery experience.
+To build a reusable, modular matchmaking engine that works across multiple verticals — including food, fitness, entertainment, travel, and education. The platform is designed to integrate with external content providers and enrich their products with swipe-based, social discovery features.
 
 ---
 
-## Proof of Concept – A Universal Swipe-to-Match Layer
+## Purpose
 
-This project serves as a **proof of concept** for a flexible and extensible "swipe-to-match" engine. It acts as a complementary module to existing services (like Netflix, ICA, SF Anytime, recruitment) — enabling social and interactive exploration of content.
+This project has two primary goals:
 
-Users can log in, swipe through content (e.g., recipes or movies), and match with others who like the same things. It’s designed to work on top of various data sources and content types.
+1. **Learning and professional development** – to explore new technologies and build real-world experience with scalable architecture.  
+2. **Proof of concept** – to validate a flexible "swipe-to-match" engine that could, in the future, serve as a complementary module for external platforms.
 
-### MVP Focus: Entertainment Match
-
-The pilot version focuses on entertainment inspiration. Users swipe through movies/series, and when a mutual right-swipe occurs, they unlock a shared favorites list with details about the movie/serie.
-
----
-
-## Use Cases
-
--  **“What should we watch?”** – Match Netflix-style content with a friend or partner
--  **“What should we eat?”** – Swipe and match ICA recipes for dinner ideas
--  **“Who’s the right fit?”** – Match job seekers and employers based on preference, experience & skills, completly anonymous
--  **“Where should we travel?”** – Swipe through travel destinations and match with others in your community
+> _Please note: This is an early-stage technical prototype, not a finalized product._
 
 ---
 
-##  Tech Stack
+## Use Case Examples
+
+- **Entertainment** – Match Netflix-style content with a friend or partner  
+- **Food inspiration** – Swipe and match ICA recipes for dinner ideas  
+- **Anonymous job matching** – Match job seekers and employers based on preference, experience, and skills  
+- **Travel planning** – Swipe through destinations and match with friends or community members  
+
+---
+
+## Tech Stack
 
 ### Frontend – Mobile App (React Native)
 
-- React Native with Expo (iOS & Android)
-- Axios (API communication)
-- React Navigation (screen transitions)
-- SignalR client (real-time match updates)
+- React Native with Expo (iOS & Android)  
+- Axios (API communication)  
+- React Navigation (screen transitions)  
+- SignalR client (real-time match updates)  
 - AsyncStorage (JWT token storage)
 
 ### Backend – Web API
 
-- ASP.NET Core Web API (C#)
-- SignalR (real-time notifications)
-- JWT Authentication
-- MongoDB Atlas (NoSQL database for users, content, matches)
+- ASP.NET Core Web API (C#)  
+- SignalR (real-time notifications)  
+- JWT Authentication  
+- MongoDB Atlas (NoSQL database for users, content, matches)  
 - Support for image uploads and third-party API integration
 
 ### DevOps & Infrastructure
@@ -57,68 +58,108 @@ The pilot version focuses on entertainment inspiration. Users swipe through movi
 - **Infrastructure Automation:** Ansible for provisioning, configuration, and deployment automation  
 - **Hosting:** Linux-based servers (Ubuntu LTS) for production environments  
 - **Scripting:** Bash & Python scripts for setup, maintenance, and automation  
-- **Security:** JWT authentication, environment variables for secrets, and OWASP best practices 
+- **Security:** JWT authentication, environment variables for secrets, and OWASP best practices  
+
 ---
 
-##  Architecture
+## Architecture
 
 React Native (Expo)
-⬇️ REST API + SignalR
+↓
+REST API + SignalR
+↓
 ASP.NET Core Web API
-⬇️
+↓
 MongoDB Atlas (NoSQL)
 
----
-
-##  Key Features
-
--  User registration and login (JWT)
--  Swipe left/right on dynamic content cards
--  Real-time match notifications via SignalR
--  Collaborative “match” features (shared lists, actions, chats)
--  Upload and browse custom content with metadata and images
--  Extendable content types (recipes, recruitment, movies, travel, etc.)
--  Ready for external API integration
 
 ---
 
-##  Scalability & Reusability
+## Key Features
 
-Matchify is designed to work with **multiple data sources and content types**. To adapt the app to a new context, developers only need to:
-
-1. Switch the `contentType` (e.g. from `"Travel"` to `"Recipe"` or `"Movie"`)
-2. Adjust the backend content schema and metadata
-3. Customize the card UI in the frontend
-4. (Optional) Connect to an external API (e.g., Netflix catalog or ICA recipes)
-
-This makes the app a powerful **plug-and-play interaction layer** on top of existing content platforms.
-
----
-
-##  File Structure - Matchify
-TBA
-
-
+- User registration and login (JWT)  
+- Swipe left/right on dynamic content cards  
+- Real-time match notifications via SignalR  
+- Collaborative “match” features (shared lists, actions, chats)  
+- Upload and browse custom content with metadata and images  
+- Extendable content types (recipes, recruitment, movies, travel, etc.)  
+- Ready for external API integration  
 
 ---
 
-## 🛠️ Setup Instructions - TBA
+## Scalability & Reusability
+
+Matchify is built to support **multiple content types and data sources**. Switching between verticals (e.g., Travel → Recipes → Jobs) requires only minor changes to content schemas and UI presentation.
+
+This makes Matchify a flexible, reusable engine for "swipe-to-match" discovery across different domains.
+
+---
+
+## File Structure
+
+MATCHIFY
+│
+├── backend / BackendAPI
+│ ├── bin
+│ ├── Controllers
+│ ├── Models
+│ ├── obj
+│ ├── Properties
+│ ├── Services
+│ ├── .env
+│ ├── appsettings.Development.json
+│ ├── appsettings.json
+│ ├── BackendAPI.csproj
+│ ├── BackendAPI.http
+│ ├── Program.cs
+│
+├── Docs
+│ ├── LEARNINGPLAN.md
+│ ├── ROADMAP.md
+│ ├── TECHPLAN.md
+│ ├── UMLDRAFT.md
+│
+├── frontend
+│ ├── .vscode
+│ ├── app
+│ ├── assets
+│ ├── components
+│ ├── constants
+│ ├── hooks
+│ ├── node_modules
+│ ├── scripts
+│ ├── app.json
+│ ├── eslint.config.js
+│ ├── package-lock.json
+│ ├── package.json
+│ ├── README.md
+│ ├── tsconfig.json
+│
+├── .gitignore
+├── Matchify (solution file)
+
+
+
+---
+
+## Setup Instructions – TBA
 
 ### Frontend (React Native with Expo)
+
 ```bash
 npm install -g expo-cli
 git clone <your-repo>
-cd client
+cd frontend
 npm install
 expo start
-
 Backend (.NET Core API)
-cd server
+
+cd backend/BackendAPI
 dotnet restore
 dotnet run
 ⚠️ Don’t forget to configure your .env or appsettings.json for DB connection strings and JWT secrets.
 
-🌍 API Overview
+API Overview
 Method	Endpoint	Description
 POST	/api/auth/register	Register a new user
 POST	/api/auth/login	Login and receive JWT
@@ -127,17 +168,24 @@ POST	/api/content/swipe	Submit swipe decision
 GET	/api/matches	Fetch mutual matches
 POST	/api/content	Upload new content item
 
-🧪 Developer Tools
+Developer Tools
 Expo Go (mobile testing)
+
 MongoDB Atlas (cloud DB)
+
 Postman (API testing)
+
 VS Code / Visual Studio (backend)
 
-📚 Documentation
-See /docs folder for:
+Documentation
+See the /Docs folder for:
 
-technical-plan.md – system architecture and API design
+TECHPLAN.md – system architecture and API design
 
-roadmap.md – feature roadmap and development milestones
+ROADMAP.md – feature roadmap and development milestones
 
-learning-plan.md – technical learning plan and resources
+LEARNINGPLAN.md – technical learning plan and resources
+
+Developer Intent
+This project is built as part of my journey to become a full-time software developer, with a focus on backend architecture, API design, and scalable systems. I'm continuously learning, iterating, and applying industry practices to strengthen my understanding.
+
