@@ -137,20 +137,14 @@ POST	/api/content	Upload new content item
 
 Developer Tools
 Expo Go (mobile testing)
-
 MongoDB Atlas (cloud DB)
-
 Postman (API testing)
-
 VS Code / Visual Studio (backend)
 
 Documentation
 See the /Docs folder for:
-
 TECHPLAN.md – system architecture and API design
-
 ROADMAP.md – feature roadmap and development milestones
-
 LEARNINGPLAN.md – technical learning plan and resources
 
 Developer Intent
