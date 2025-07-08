@@ -33,6 +33,7 @@ This project has two primary goals:
 ---
 
 ## Tech Stack
+> _Please note: The tech stack listed below is subject to change based on practical considerations during development, including alignment with tools used during my internship, opportunities to practice specific technologies, or architectural decisions made along the way. It reflects my current priorities and serves as a flexible foundation. ._
 
 ### Frontend – Mobile App (React Native)
 
