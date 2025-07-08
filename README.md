@@ -97,46 +97,13 @@ This makes Matchify a flexible, reusable engine for "swipe-to-match" discovery a
 
 ## File Structure
 
-MATCHIFY
+MATCHIFY - TBA
 │
-├── backend / BackendAPI
-│ ├── bin
-│ ├── Controllers
-│ ├── Models
-│ ├── obj
-│ ├── Properties
-│ ├── Services
-│ ├── .env
-│ ├── appsettings.Development.json
-│ ├── appsettings.json
-│ ├── BackendAPI.csproj
-│ ├── BackendAPI.http
-│ ├── Program.cs
-│
+├── backend 
 ├── Docs
-│ ├── LEARNINGPLAN.md
-│ ├── ROADMAP.md
-│ ├── TECHPLAN.md
-│ ├── UMLDRAFT.md
-│
 ├── frontend
-│ ├── .vscode
-│ ├── app
-│ ├── assets
-│ ├── components
-│ ├── constants
-│ ├── hooks
-│ ├── node_modules
-│ ├── scripts
-│ ├── app.json
-│ ├── eslint.config.js
-│ ├── package-lock.json
-│ ├── package.json
-│ ├── README.md
-│ ├── tsconfig.json
-│
-├── .gitignore
-├── Matchify (solution file)
+
+
 
 
 
