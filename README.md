@@ -1,6 +1,6 @@
 # Matchify – UNDER DEVELOPMENT
 
-**Matchify** is a mobile-first, swipe-to-match platform where users browse through various types of content — such as recipes, travel destinations, movies, or workouts. When two users both swipe right on the same item, they are matched and can explore the content together using collaborative features like shared lists, plans, or chats.
+**Matchify** is a mobile-first, swipe-to-match platform where users browse through various types of content, such as recipes, travel destinations, movies, or workouts. When two users both swipe right on the same item, they are matched and can explore the content together using collaborative features like shared lists, plans, or chats.
 
 > _Note: This repository focuses on showcasing technical implementation and structure. Some business-critical features and architecture details are intentionally excluded to protect potential future commercial use._
 
@@ -8,7 +8,7 @@
 
 ## Vision
 
-To build a reusable, modular matchmaking engine that works across multiple verticals — including food, fitness, entertainment, travel, and education. The platform is designed to integrate with external content providers and enrich their products with swipe-based, social discovery features.
+To build a reusable, modular matchmaking engine that works across multiple verticals, including food, fitness, entertainment, travel, and education. The platform is designed to integrate with external content providers and enrich their products with swipe-based, social discovery features.
 
 ---
 
