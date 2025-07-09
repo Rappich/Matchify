@@ -33,4 +33,13 @@ public class UserService
     // Creates a new user.
     public async Task CreateAsync(User user) =>
         await _usersCollection.InsertOneAsync(user);
+
+    // Updates an existing user.
+    public async Task<User?> GetByEmailOrUsernameAsync(string? email, string? username)
+{
+    var filterBuilder = Builders<User>.Filter;
+    var filter = filterBuilder.Eq(u => u.Email, email) | filterBuilder.Eq(u => u.Username, username);
+
+    return await _usersCollection.Find(filter).FirstOrDefaultAsync();
+}
 }

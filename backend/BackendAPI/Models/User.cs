@@ -24,4 +24,8 @@ public class User
     // When the user was created.
     [BsonElement("createdAt")]
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+    // User's password hash.
+    [BsonElement("passwordHash")]
+    public string PasswordHash { get; set; } = string.Empty;    
 }
