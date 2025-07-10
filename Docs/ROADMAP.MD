@@ -24,8 +24,10 @@
 - [ ] Write basic **Bash** or **Python** scripts to automate common tasks (build, test, deploy)
 
 ## Milestone 3: Content Management & Swipe UI
-- [ ] Jackard simularity -    https://www.youtube.com/watch?v=Ah_4xqvS1WU&ab_channel=VictorAxelsson
-- [ ] Word Stemming (look up)
+- [ ] Simularity measurement (lock up)
+  - Jackard simularity - https://www.youtube.com/watch?v=Ah_4xqvS1WU&ab_channel=VictorAxelsson
+  - Word Stemming (look up)
+  - k-nearers neighbours, dijkstras
 - [ ] Design and implement `ContentItem` data model and API endpoints (CRUD)  
 - [ ] Create UI to fetch and display swipeable content cards in React Native  
 - [ ] Implement swipe gestures (left/right) for content cards  
