@@ -12,9 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 /// =============================
 
 // Load environment variables from .env file (lokal utveckling)
-DotNetEnv.Env.Load();
+Env.Load();
 
-// Läs in appsettings.json + miljövariabler
 builder.Configuration
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
     .AddEnvironmentVariables();
@@ -23,7 +22,7 @@ builder.Configuration
 /// MongoDB setup
 /// =============================
 
-// Hämta anslutningssträng och databasenamn från konfiguration eller miljövariabler
+/// Read MongoDB connection string and database name from configuration
 var mongoConnection = builder.Configuration["MONGODB_CONN"]
                       ?? builder.Configuration.GetConnectionString("MongoDb")
                       ?? throw new Exception("MongoDB connection string not configured.");
@@ -32,10 +31,10 @@ var mongoDatabaseName = builder.Configuration["MONGODB_DBNAME"]
                         ?? builder.Configuration["DatabaseName"]
                         ?? "MatchifyDB";
 
-// Registrera MongoDB-klient som singleton, så den återanvänds
+/// Registrera MongoDB-klient som singleton
 builder.Services.AddSingleton<IMongoClient>(_ => new MongoClient(mongoConnection));
 
-// Registrera MongoDB-databas som singleton (hämtad från klienten)
+/// Register MongoDB database as singleton
 builder.Services.AddSingleton(sp =>
     sp.GetRequiredService<IMongoClient>().GetDatabase(mongoDatabaseName));
 

@@ -1,0 +1,12 @@
+### Login
+POST https://localhost:7024/api/user/login
+Content-Type: application/json
+
+{
+  "username": "dittAnvändarnamn",
+  "password": "dittLösenord"
+}
+
+### Protected resource
+GET https://localhost:7024/api/user/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...

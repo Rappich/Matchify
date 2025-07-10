@@ -28,7 +28,7 @@ public class UserService
     {
         _configuration = configuration;
 
-        var mongoConnectionString = configuration["MONGODB_CONN"];
+        var mongoConnectionString = configuration["ConnectionStrings:MongoDb"];
         var databaseName = configuration["ConnectionStrings:DatabaseName"];
         var client = new MongoClient(mongoConnectionString);
         var database = client.GetDatabase(databaseName);
