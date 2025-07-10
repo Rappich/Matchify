@@ -5,13 +5,15 @@ using BackendAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//  Load environment variables from .env
+// -------------------------
+// Load environment settings
+// -------------------------
 DotNetEnv.Env.Load();
-
-//  Load config from appsettings.json and environment
 builder.Configuration
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
     .AddEnvironmentVariables();
+
+
 
 //  Get MongoDB connection details
 var mongoConnection = Environment.GetEnvironmentVariable("MONGODB_CONN")
