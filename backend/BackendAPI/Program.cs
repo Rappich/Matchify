@@ -1,60 +1,114 @@
 using DotNetEnv;
 using MongoDB.Driver;
 using BackendAPI.Services;
-
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// -------------------------
-// Load environment settings
-// -------------------------
+/// =============================
+/// Load configuration
+/// =============================
+
+// Load environment variables from .env file (lokal utveckling)
 DotNetEnv.Env.Load();
+
+// Läs in appsettings.json + miljövariabler
 builder.Configuration
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
     .AddEnvironmentVariables();
 
+/// =============================
+/// MongoDB setup
+/// =============================
 
-
-//  Get MongoDB connection details
-var mongoConnection = Environment.GetEnvironmentVariable("MONGODB_CONN")
+// Hämta anslutningssträng och databasenamn från konfiguration eller miljövariabler
+var mongoConnection = builder.Configuration["MONGODB_CONN"]
                       ?? builder.Configuration.GetConnectionString("MongoDb")
                       ?? throw new Exception("MongoDB connection string not configured.");
 
-var mongoDatabaseName = Environment.GetEnvironmentVariable("MONGODB_DBNAME")
+var mongoDatabaseName = builder.Configuration["MONGODB_DBNAME"]
                         ?? builder.Configuration["DatabaseName"]
                         ?? "MatchifyDB";
 
-//  Register MongoDB services
-builder.Services.AddSingleton<IMongoClient>(s => new MongoClient(mongoConnection));
-builder.Services.AddSingleton(sp => sp.GetRequiredService<IMongoClient>().GetDatabase(mongoDatabaseName));
+// Registrera MongoDB-klient som singleton, så den återanvänds
+builder.Services.AddSingleton<IMongoClient>(_ => new MongoClient(mongoConnection));
 
-//  Register custom services (like UserService – we’ll create this soon!)
+// Registrera MongoDB-databas som singleton (hämtad från klienten)
+builder.Services.AddSingleton(sp =>
+    sp.GetRequiredService<IMongoClient>().GetDatabase(mongoDatabaseName));
+
+/// =============================
+/// Register your services here
+/// =============================
+
 builder.Services.AddSingleton<UserService>();
 
-//  Register support for attribute-based controllers like [ApiController]
+/// =============================
+/// JWT Authentication setup
+/// =============================
+
+/// Read JWT settings from configuration
+/// Ensure these are set in appsettings.json or environment variables
+var jwtSecret = builder.Configuration["JwtSettings:SecretKey"];
+var jwtIssuer = builder.Configuration["JwtSettings:Issuer"];
+var jwtAudience = builder.Configuration["JwtSettings:Audience"];
+
+if (string.IsNullOrEmpty(jwtSecret) || string.IsNullOrEmpty(jwtIssuer) || string.IsNullOrEmpty(jwtAudience))
+{
+    throw new Exception("JWT configuration is missing in appsettings.json or environment variables.");
+}
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwtIssuer,
+            ValidAudience = jwtAudience,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSecret))
+        };
+    });
+
+/// =============================
+/// MVC and Swagger setup
+/// =============================
+
 builder.Services.AddControllers();
 
-// (Optional: Swagger setup)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+/// =============================
+/// Build app and configure middleware
+/// =============================
+
 var app = builder.Build();
 
-//  Development-time tools
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-//  Middleware pipeline
 app.UseHttpsRedirection();
 
-//  Enable routing for controllers like /api/user
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.MapControllers();
 
-//  Temporary test endpoint
+/// =============================
+/// Test endpoints
+/// =============================
+
 app.MapGet("/", () => "Welcome to Matchify backend. Use /api/test/ping to test MongoDB connection.");
+
 app.MapGet("/api/test/ping", (IMongoDatabase db) =>
 {
     try
