@@ -28,6 +28,7 @@
   - Jackard simularity - https://www.youtube.com/watch?v=Ah_4xqvS1WU&ab_channel=VictorAxelsson
   - Word Stemming (look up)
   - k-nearers neighbours, dijkstras
+  - Shortest-longest path
 - [ ] Design and implement `ContentItem` data model and API endpoints (CRUD)  
 - [ ] Create UI to fetch and display swipeable content cards in React Native  
 - [ ] Implement swipe gestures (left/right) for content cards  
