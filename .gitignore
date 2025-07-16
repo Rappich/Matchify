@@ -6,10 +6,12 @@ dist/
 web-build/
 expo-env.d.ts
 
-# Metro
-.metro-health-check*
+# Metro cache
+.metro/
+metro-cache/
+*.hbc
 
-# Debug logs
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -17,19 +19,14 @@ yarn-error.log*
 *.tmp
 *.temp
 
-# Expo/React Native caches
-.expo/
-.expo-shared/
-
-# React Native iOS/Android build outputs
-ios/build/
+# React Native Android/iOS build output
+android/.gradle/
 android/app/build/
+ios/build/
 *.keystore
-
-# Native signing / provisioning files
-.kotlin/
-*.orig.*
 *.jks
+
+# React Native signing & provisioning
 *.p8
 *.p12
 *.key
@@ -37,45 +34,46 @@ android/app/build/
 
 # Environment files (API keys, secrets)
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 
-# Backend (.NET Core)
+# Legacy .NET backend
 bin/
 obj/
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
-.env
 .test.http
 
+# Python virtual environments & cache
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
+# FastAPI auto reload pid files
+*.pid
 
-# Editor and IDE settings
-.vscode/
-.vs/
-
-# ASP.NET Core secret manager
-secrets.json
+# Python testing
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+*.sqlite3
 
 # Docker
 docker-compose.override.yml
 Dockerfile*
 *.env
 
-# MongoDB (local database files)
-*.lock
-*.pid
+# Editor / IDE
+.vscode/
+.idea/
+*.code-workspace
 
-# Python cache
-__pycache__/
-*.pyc
-
-# Bash scripts (temporary swap files)
-*.swp
-
-# OS-specific files
+# OS-specific
 .DS_Store
 Thumbs.db
 

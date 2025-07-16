@@ -8,7 +8,9 @@
 
 ## Backend
 1. Clone repo and go to backend folder  
-2. Create and activate Python virtual environment  
+2. Create and activate Python virtual environment
+    - # macOS / Linux: command "python3 -m venv venv source venv/bin/activate"
+    - # Windows: command "python -m venv venv venv\Scripts\activate"
 3. Install dependencies (`pip install -r requirements.txt`)  
 4. Set up `.env` file with DB and JWT info  
 5. Run backend server (`python app.py`)
