@@ -32,7 +32,7 @@ This project has two primary goals:
 
 ---
 
-## Tech Stack
+## Tech Stack  
 > _Please note: The tech stack listed below is subject to change based on practical considerations during development, including alignment with tools used during my internship, opportunities to practice specific technologies, or architectural decisions made along the way. Currently It outlines a focused starting point while remaining adaptable to new tools and workflows in a professional setting._
 
 ### Frontend – Mobile App (React Native)
@@ -45,10 +45,10 @@ This project has two primary goals:
 
 ### Backend – Web API
 
-- ASP.NET Core Web API (C#)  
-- SignalR (real-time notifications)  
-- JWT Authentication  
-- MongoDB Atlas (NoSQL database for users, content, matches)  
+- **Python** with **FastAPI** (async web framework)  
+- **MongoDB** Atlas (NoSQL database for users, content, matches)  
+- **JWT Authentication** via `pyjwt` or `fastapi-jwt-auth`  
+- **WebSocket** (FastAPI + `starlette` WebSocket support) for real-time notifications (SignalR client replaced with native WebSocket)  
 - Support for image uploads and third-party API integration
 
 ### DevOps & Infrastructure
@@ -65,14 +65,13 @@ This project has two primary goals:
 
 ## Architecture
 
-React Native (Expo)
-↓
-REST API + SignalR
-↓
-ASP.NET Core Web API
-↓
+React Native (Expo)  
+↓  
+REST API + WebSocket (FastAPI)  
+↓  
+FastAPI Backend Server  
+↓  
 MongoDB Atlas (NoSQL)
-
 
 ---
 
@@ -80,7 +79,7 @@ MongoDB Atlas (NoSQL)
 
 - User registration and login (JWT)  
 - Swipe left/right on dynamic content cards  
-- Real-time match notifications via SignalR  
+- Real-time match notifications via WebSocket  
 - Collaborative “match” features (shared lists, actions, chats)  
 - Upload and browse custom content with metadata and images  
 - Extendable content types (recipes, recruitment, movies, travel, etc.)  
@@ -98,56 +97,49 @@ This makes Matchify a flexible, reusable engine for "swipe-to-match" discovery a
 
 ## File Structure
 
-MATCHIFY - TBA
-│
-├── backend 
-├── Docs
-├── frontend
-
-
-
-
+MATCHIFY - TBA  
+│  
+├── backend  
+├── Docs  
+├── frontend  
 
 ---
 
-## Setup Instructions – TBA
+## API Overview
 
-### Frontend (React Native with Expo)
+| Method | Endpoint             | Description                     |
+|--------|----------------------|---------------------------------|
+| POST   | /api/auth/register   | Register a new user              |
+| POST   | /api/auth/login      | Login and receive JWT            |
+| GET    | /api/content         | Fetch swipeable content          |
+| POST   | /api/content/swipe   | Submit swipe decision            |
+| GET    | /api/matches         | Fetch mutual matches             |
+| POST   | /api/content         | Upload new content item          |
 
-```bash
-npm install -g expo-cli
-git clone <your-repo>
-cd frontend
-npm install
-expo start
-Backend (.NET Core API)
+---
 
-cd backend/BackendAPI
-dotnet restore
-dotnet run
-⚠️ Don’t forget to configure your .env or appsettings.json for DB connection strings and JWT secrets.
+## Developer Tools
 
-API Overview
-Method	Endpoint	Description
-POST	/api/auth/register	Register a new user
-POST	/api/auth/login	Login and receive JWT
-GET	/api/content	Fetch swipeable content
-POST	/api/content/swipe	Submit swipe decision
-GET	/api/matches	Fetch mutual matches
-POST	/api/content	Upload new content item
+- Expo Go (mobile testing)  
+- MongoDB Atlas (cloud DB)  
+- Postman or Insomnia (API testing)  
+- VS Code / PyCharm (backend)
 
-Developer Tools
-Expo Go (mobile testing)
-MongoDB Atlas (cloud DB)
-Postman (API testing)
-VS Code / Visual Studio (backend)
+---
 
-Documentation
-See the /Docs folder for:
-TECHPLAN.md – system architecture and API design
-ROADMAP.md – feature roadmap and development milestones
-LEARNINGPLAN.md – technical learning plan and resources
+## Documentation
 
-Developer Intent
+See the `/Docs` folder for:  
+- TECHPLAN.md – system architecture and API design  
+- ROADMAP.md – feature roadmap and development milestones  
+- LEARNINGPLAN.md – technical learning plan and resources  
+- SETUP.md – environment setup and installation instructions
+
+---
+
+## Developer Intent
+
 This project is built as part of my journey to become a full-time software developer, with a focus on backend architecture, API design, and scalable systems. I'm continuously learning, iterating, and applying industry practices to strengthen my understanding.
+
+---
 
