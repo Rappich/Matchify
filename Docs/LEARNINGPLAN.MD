@@ -4,58 +4,65 @@
 
 ### Basics of Web & Mobile Development
 - [ ] Understand the difference between **web apps** and **mobile apps**  
-- [x] Learn basic **HTML, CSS/Tailwind CSS, and TypeScript** concepts (fundamentals)
+- [x] Learn basic **HTML, CSS/Tailwind CSS, and TypeScript** fundamentals  
 
 ### React Native (Frontend)
-- [ ] Learn what **React Native** is and how it differs from React for web  
-- [ ] Understand **JSX syntax** and components in React Native  
-- [ ] Explore basic React Native UI components (View, Text, Image, Button)  
-- [ ] Understand **state** and **props** in React components  
-- [ ] Learn about **navigation** in React Native (React Navigation)  
-- [ ] Explore how to handle **user input** and **gestures** (for swipe functionality)  
-- [ ] Get familiar with **Expo** for easier development and testing
+- [ ] Understand what **React Native** is and how it differs from React for web  
+- [ ] Learn **JSX syntax** and component basics in React Native  
+- [ ] Explore core React Native UI components (View, Text, Image, Button)  
+- [ ] Understand **state** and **props** management in React components  
+- [ ] Learn **navigation** in React Native (React Navigation)  
+- [ ] Handle **user input** and **gestures** (swipe functionality)  
+- [ ] Get familiar with **Expo CLI** for development and testing  
+- [ ] Learn how to integrate **WebSocket clients** in React Native for real-time updates  
 
-### Backend (ASP.NET Core)
-- [ ] Understand what a **REST API** is  
-- [ ] Learn basics of **C#** syntax and concepts (variables, classes, async)  
-- [ ] Explore **ASP.NET Core** for building Web APIs  
-- [ ] Understand **routing** and **controllers** in ASP.NET Core  
-- [ ] Learn how to connect to **MongoDB** from ASP.NET Core using MongoDB.Driver  
-- [ ] Understand **JWT authentication** basics  
-- [ ] Learn about **SignalR** for real-time communication basics
+### Backend (Python with FastAPI)
+- [ ] Understand what a **REST API** is and how to design one  
+- [ ] Learn **Python 3.10+** syntax and features (async/await, typing, data classes)  
+- [ ] Explore **FastAPI** framework fundamentals  
+- [ ] Understand routing, request handling, and response models in FastAPI  
+- [ ] Learn how to connect to **MongoDB** using `motor` (async MongoDB driver) or `pymongo`  
+- [ ] Implement **JWT authentication** with OAuth2 password flow in FastAPI  
+- [ ] Learn basics of **WebSocket** support in FastAPI for real-time features  
+- [ ] Write **unit tests and integration tests** using Pytest  
+- [ ] Study best practices for **error handling** and **input validation** in FastAPI  
 
 ### Database (MongoDB)
-- [x] Understand **NoSQL vs SQL** basics  
-- [ ] Learn how MongoDB stores data (collections, documents)  
-- [ ] Explore basic **CRUD operations** in MongoDB  
-- [ ] Learn how to design **simple data models** in MongoDB
+- [x] Understand **NoSQL vs SQL** concepts  
+- [ ] Learn MongoDB data modeling: collections and documents  
+- [ ] Practice basic **CRUD operations** in MongoDB  
+- [ ] Learn how to design flexible and efficient **data schemas**  
+- [ ] Understand indexing and query optimization basics  
 
 ### DevOps & Infrastructure
-- [x] Learn basics of **Linux** command line and file system (Ubuntu preferred)  
-- [ ] Understand **GitLab CI/CD** workflows and pipeline setup  
-- [ ] Learn **Docker** fundamentals: containers, images, Dockerfiles, and Compose  
-- [ ] Understand **Ansible** for infrastructure provisioning and configuration management  
-- [ ] Practice writing **Bash** and **Python** scripts for automation tasks  
+- [x] Learn basics of **Linux command line and file system** (Ubuntu preferred)  
+- [ ] Understand **Docker**: containers, images, Dockerfiles, and Compose  
+- [ ] Practice containerizing FastAPI apps and running MongoDB locally with Docker Compose  
+- [ ] Learn basics of **Ansible** for provisioning and deployment automation  
+- [ ] Set up **CI/CD pipelines** using GitHub Actions or GitLab CI for Python and React Native projects  
 - [ ] Learn environment variables and **secrets management** best practices  
-- [ ] Explore basic concepts of **infrastructure as code** and deployment automation  
-- [ ] Understand logging, monitoring, and alerting basics (future scope)
+- [ ] Explore basic **logging** in Python and React Native  
+- [ ] Understand monitoring and alerting fundamentals (optional, future focus)  
 
 ### General Concepts
-- [ ] Understand the concept of **authentication and authorization**  
-- [ ] Learn what **OAuth** and **JWT** are, at a high level  
-- [ ] Understand what **real-time communication** means and use cases  
-- [ ] Learn basic **API testing** with tools like Postman or Insomnia  
-- [x] Understand version control basics (**Git**, GitHub/GitLab)
+- [ ] Understand the difference between **authentication and authorization**  
+- [ ] Learn what **OAuth2** and **JWT** are, and how they work together  
+- [ ] Understand **real-time communication** and WebSocket use cases  
+- [ ] Learn basic **API testing** with Postman or Insomnia  
+- [x] Understand version control basics (**Git**, GitHub/GitLab)  
 
 ---
 
 ## Optional / Later Learning
 
-- [ ] Advanced React Native (performance, animations)  
-- [ ] More advanced ASP.NET Core features (middleware, dependency injection)  
-- [ ] Deep dive into SignalR and WebSocket protocols  
-- [ ] Deployment strategies and cloud platforms (Azure, AWS, or others)  
-- [ ] Testing frameworks for frontend and backend  
+- [ ] Advanced React Native (performance optimization, animations)  
+- [ ] More advanced FastAPI features (dependency injection, middleware)  
+- [ ] Deep dive into WebSocket protocols and scaling real-time communication  
+- [ ] Push notifications with Expo or Firebase Cloud Messaging  
+- [ ] Deployment strategies on cloud providers (AWS, Azure, DigitalOcean)  
+- [ ] End-to-end testing frameworks for frontend and backend  
 - [ ] UI/UX design principles for mobile apps  
 - [ ] Advanced Docker and container orchestration (Kubernetes basics)  
 - [ ] Advanced Ansible playbooks and roles  
+
+---
