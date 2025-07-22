@@ -1,15 +1,10 @@
 from fastapi import FastAPI
+from routes import user_routes
 
 app = FastAPI()
 
-@app.get("/ping")
-async def ping():
-    return {"message": "pong"}
+app.include_router(user_routes.router)
 
-@app.get("/hello")
-async def hello():
-    return {"message": "Hello, World!"}
-
-@app.get("/database")
-async def database():
-    return {"message": "Database endpoint is not implemented yet."}
+@app.get("/")
+async def root():
+    return {"message": "API is running"}

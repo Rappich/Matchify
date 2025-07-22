@@ -18,7 +18,7 @@
 
 ### Backend (Python with FastAPI)
 - [ ] Understand what a **REST API** is and how to design one  
-- [ ] Learn **Python 3.10+** syntax and features (async/await, typing, data classes)  
+- [x] Learn basic **Python 3.10+** syntax and features (async/await, typing, data classes)  
 - [ ] Explore **FastAPI** framework fundamentals  
 - [ ] Understand routing, request handling, and response models in FastAPI  
 - [ ] Learn how to connect to **MongoDB** using `motor` (async MongoDB driver) or `pymongo`  

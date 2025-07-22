@@ -5,8 +5,8 @@
   - Initialize Git repository  
   - Create `.gitignore` and basic README  
 - [x] Initialize React Native app with **Expo**  
-- [ ] Set up Python backend project with **FastAPI**  
-- [ ] Configure **MongoDB Atlas** cluster and connect backend  
+- [x] Set up Python backend project with **FastAPI**  
+- [x] Configure **MongoDB Atlas** cluster and connect backend  
 - [ ] Implement basic user registration and login API with **JWT authentication**  
 - [ ] Build simple login and registration screens in React Native  
 - [ ] Set up basic **Linux** environment (local VM or cloud) for development and deployment practice  
