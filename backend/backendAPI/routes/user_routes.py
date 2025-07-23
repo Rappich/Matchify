@@ -3,6 +3,9 @@ from models.user_model import User, RegisterRequest, LoginRequest
 from services.user_service import UserService
 from utils.hash import hash_password, verify_password
 from datetime import datetime
+from datetime import timedelta
+from utils.jwt import create_access_token
+
 
 router = APIRouter(prefix="/api", tags=["Users"])
 user_service = UserService()
@@ -37,7 +40,18 @@ async def login_user(request: LoginRequest):
     if user is None or not verify_password(request.password, user.password_hash):
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
-    return {"message": "Login successful", "username": user.username}
+    # Create JWT token
+    access_token = create_access_token(
+        data={"sub": user.username},
+        expires_delta=timedelta(minutes=60)
+    )
+
+    return {
+        "access_token": access_token,
+        "token_type": "bearer",
+        "username": user.username
+    }
+
 
 # List all users
 # This endpoint retrieves all users from the database and returns them as a list of dictionaries.

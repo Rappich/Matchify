@@ -13,6 +13,9 @@ class UserService:
     # This method takes a User object, converts it to a dictionary, and inserts it into
     async def create_user(self, user: User) -> str:
         user_dict = user.dict(by_alias=True)
+        # Ensure _id is not included in the user_dict if it is None
+        if user_dict.get("_id") is None:
+            user_dict.pop("_id", None)
         result = await self.collection.insert_one(user_dict)
         return str(result.inserted_id)
 
