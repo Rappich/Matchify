@@ -7,7 +7,7 @@
 - [x] Initialize React Native app with **Expo**  
 - [x] Set up Python backend project with **FastAPI**  
 - [x] Configure **MongoDB Atlas** cluster and connect backend  
-- [ ] Implement basic user registration and login API with **JWT authentication**  
+- [x] Implement basic user registration and login API with **JWT authentication**  
 - [ ] Build simple login and registration screens in React Native  
 - [ ] Set up basic **Linux** environment (local VM or cloud) for development and deployment practice  
 
@@ -29,6 +29,12 @@
 - [ ] Implement swipe gestures (left/right) for content cards  
 - [ ] Store user swipe actions in backend (API and MongoDB)  
 - [ ] Extend CI/CD pipeline to build and test changes including new API endpoints  
+- [ ] Continue JWT implementation  
+  - [ ] Add logic to extract and validate JWT from `Authorization: Bearer <token>` headers  
+  - [ ] Implement `get_current_user()` dependency function  
+  - [ ] Secure sensitive endpoints (e.g., swipe, profile) using `Depends(get_current_user)`  
+  - [ ] Return appropriate 401/403 responses for invalid or missing tokens  
+  - [ ] Create a simple `/me` endpoint to return current logged-in user's data  
 
 ## Milestone 4: Real-Time Match Engine & Notifications
 - [ ] Implement backend logic to detect matches when two users swipe right on the same content  
