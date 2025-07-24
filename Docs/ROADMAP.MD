@@ -9,7 +9,7 @@
 - [x] Configure **MongoDB Atlas** cluster and connect backend  
 - [x] Implement basic user registration and login API with **JWT authentication**  
 - [ ] Build simple login and registration screens in React Native  
-- [ ] Set up basic **Linux** environment (local VM or cloud) for development and deployment practice  
+- [x] Set up basic **Linux** environment (local VM or cloud) for development and deployment practice  
 
 ## Milestone 2: Version Control & CI/CD Pipeline Setup
 - [ ] Learn and practice **GitLab CI/CD** or **GitHub Actions** basics  
