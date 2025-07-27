@@ -2,24 +2,26 @@
 
 ## Milestone 1: Project Setup & Basic Infrastructure
 - [x] Set up project repository on **GitHub** or **GitLab**  
-  - Initialize Git repository  
-  - Create `.gitignore` and basic README  
+  - [x] Initialize Git repository  
+  - [x] Create `.gitignore` and basic README  
 - [x] Initialize React Native app with **Expo**  
 - [x] Set up Python backend project with **FastAPI**  
 - [x] Configure **MongoDB Atlas** cluster and connect backend  
 - [x] Implement basic user registration and login API with **JWT authentication**  
-- [ ] Build simple login and registration screens in React Native  
+- [x] Build simple login and registration screens in React Native
+  - [ ] (optional) Implement **expo-router** for navigation or stay with stack navigation
+  - [ ] (optional) Set up **nativewind** for styling and Tailwind support  
 - [x] Set up basic **Linux** environment (local VM or cloud) for development and deployment practice  
 
 ## Milestone 2: Version Control & CI/CD Pipeline Setup
 - [ ] Learn and practice **GitLab CI/CD** or **GitHub Actions** basics  
 - [ ] Create simple pipeline that runs on each commit:  
-  - Build backend API  
-  - Run backend tests (start with simple unit tests)  
-  - Build React Native app (or run lint/static analysis)  
+  - [ ] Build backend API  
+  - [ ] Run backend tests (start with simple unit tests)  
+  - [ ] Build React Native app (or run lint/static analysis)  
 - [ ] Containerize backend using **Docker**  
-  - Write Dockerfile for Python FastAPI backend  
-  - Build and run container locally  
+  - [ ] Write Dockerfile for Python FastAPI backend  
+  - [ ] Build and run container locally  
 - [ ] Set up Docker Compose for running backend + MongoDB locally  
 - [ ] Write basic **Bash** or **Python** scripts to automate common tasks (build, test, deploy)  
 
@@ -68,9 +70,9 @@
 - [ ] Test real-time functionality under multi-user scenarios  
 - [ ] Set up logging, monitoring, and alerts (basic tools or cloud provider services)  
 - [ ] Prepare app for production deployment:  
-  - Build and sign React Native app for stores (optional)  
-  - Deploy backend API and MongoDB to a cloud provider (Azure, AWS, or DigitalOcean)  
-  - Use Docker and Ansible for repeatable, automated deployments  
+  - [ ] Build and sign React Native app for stores (optional)  
+  - [ ] Deploy backend API and MongoDB to a cloud provider (Azure, AWS, or DigitalOcean)  
+  - [ ] Use Docker and Ansible for repeatable, automated deployments  
 - [ ] Final polish and bug fixing  
 
 ---

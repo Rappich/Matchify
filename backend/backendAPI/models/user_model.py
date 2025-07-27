@@ -2,27 +2,28 @@ from pydantic import BaseModel, EmailStr, Field
 from typing import Optional
 from datetime import datetime
 
-# User model definition.This model represents the user data structure used in the application.
+# User model definition. Represents the user data structure in the application.
 class User(BaseModel):
-    id: Optional[str] = Field(alias="_id")  # MongoDB ObjectId as string
+    # MongoDB ObjectId represented as a string with alias '_id'
+    id: Optional[str] = Field(default=None, alias="_id")
     username: str
     email: EmailStr
-    password_hash: str = Field(alias="passwordHash")
-    created_at: datetime = Field(default_factory=datetime.utcnow, alias="createdAt")
+    # Password hash field with exact alias to match database key 'passwordHash'
+    passwordHash: str = Field(..., alias="passwordHash")
+    # Timestamp for when the user was created, with default set to current UTC time
+    createdAt: datetime = Field(default_factory=datetime.utcnow, alias="createdAt")
 
-    # Pydantic configuration to allow population by field names and aliases
     class Config:
-        allow_population_by_field_name = True  
+        # Allows population of the model using either field names or aliases
+        allow_population_by_field_name = True
 
-# Request models for user registration and login
-# These models are used to validate incoming data for user registration and login requests.
+# Request model for user registration. Used to validate registration input data.
 class RegisterRequest(BaseModel):
     username: str
     email: EmailStr
     password: str
 
-# Login request model
-# This model is used to validate incoming data for user login requests.
+# Request model for user login. Used to validate login input data.
 class LoginRequest(BaseModel):
     username: str
     password: str
