@@ -4,19 +4,6 @@
 
 > _Note: This repository focuses on showcasing technical implementation and structure. Some business-critical features and architecture details are intentionally excluded to protect potential future commercial use._
 
----
-
-## GitLab for CI/CD (GitHub as Mirror)
-
-Although this repository is hosted on **GitHub** for visibility and portfolio purposes, the project is **actively developed in GitLab** to take advantage of its integrated DevOps features.
-
-- All CI/CD logic lives in `.gitlab-ci.yml`
-- GitLab pipelines run on every commit to:
-  - Build and test the FastAPI backend
-  - Lint and verify the React Native frontend
-- GitLab automatically mirrors changes to this GitHub repository
-
-**Source-of-truth GitLab repo:** [https://gitlab.com/rappich-group/Matchify.git](https://gitlab.com/rappich-group/Matchify.git)
 
 ---
 
@@ -50,7 +37,6 @@ This project has two primary goals:
 > _The tech stack is subject to change based on internship priorities, evolving goals, and exploration of new tools._
 
 ### Frontend – Mobile App (React Native)
-
 - React Native with Expo (iOS & Android)  
 - Axios (API communication)  
 - React Navigation (screen transitions)  
@@ -58,7 +44,6 @@ This project has two primary goals:
 - AsyncStorage (JWT token storage)
 
 ### Backend – Web API
-
 - **Python** with **FastAPI** (async web framework)  
 - **MongoDB** Atlas (NoSQL database for users, content, matches)  
 - **JWT Authentication** via `pyjwt` or `fastapi-jwt-auth`  
@@ -66,9 +51,12 @@ This project has two primary goals:
 - Image upload support and external API integration
 
 ### DevOps & Infrastructure
-
 - **Version Control:** Git & GitLab  
 - **CI/CD Pipelines:** GitLab CI/CD automates backend/frontend build & tests  
+- **Repository Hosting:** Primary repo on GitLab, with automatic mirroring to GitHub for visibility and portfolio  
+- **GitLab pipelines run on every commit to:
+  - Build and test FastAPI backend
+  - Lint and verify React Native frontend
 - **Containerization:** Dockerized backend  
 - **Infrastructure Automation:** Ansible (planned)  
 - **Hosting:** Linux-based (Ubuntu) servers  
