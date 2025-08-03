@@ -6,6 +6,20 @@
 
 ---
 
+## GitLab for CI/CD (GitHub as Mirror)
+
+Although this repository is hosted on **GitHub** for visibility and portfolio purposes, the project is **actively developed in GitLab** to take advantage of its integrated DevOps features.
+
+- All CI/CD logic lives in `.gitlab-ci.yml`
+- GitLab pipelines run on every commit to:
+  - Build and test the FastAPI backend
+  - Lint and verify the React Native frontend
+- GitLab automatically mirrors changes to this GitHub repository
+
+**Source-of-truth GitLab repo:** [https://gitlab.com/rappich-group/Matchify.git](https://gitlab.com/rappich-group/Matchify.git)
+
+---
+
 ## Vision
 
 To build a reusable, modular matchmaking engine that works across multiple verticals, including food, fitness, entertainment, travel, and education. The platform is designed to integrate with external content providers and enrich their products with swipe-based, social discovery features.
@@ -33,7 +47,7 @@ This project has two primary goals:
 ---
 
 ## Tech Stack  
-> _Please note: The tech stack listed below is subject to change based on practical considerations during development, including alignment with tools used during my internship, opportunities to practice specific technologies, or architectural decisions made along the way. Currently It outlines a focused starting point while remaining adaptable to new tools and workflows in a professional setting._
+> _The tech stack is subject to change based on internship priorities, evolving goals, and exploration of new tools._
 
 ### Frontend – Mobile App (React Native)
 
@@ -48,60 +62,60 @@ This project has two primary goals:
 - **Python** with **FastAPI** (async web framework)  
 - **MongoDB** Atlas (NoSQL database for users, content, matches)  
 - **JWT Authentication** via `pyjwt` or `fastapi-jwt-auth`  
-- **WebSocket** (FastAPI + `starlette` WebSocket support) for real-time notifications (SignalR client replaced with native WebSocket)  
-- Support for image uploads and third-party API integration
+- **WebSocket** (FastAPI + `starlette` WebSocket support) for real-time notifications  
+- Image upload support and external API integration
 
 ### DevOps & Infrastructure
 
-- **Version Control:** Git & GitLab with branching strategy  
-- **CI/CD Pipelines:** GitLab CI/CD automating build, test, and deployment  
-- **Containerization:** Docker ensures consistent backend environments  
-- **Infrastructure Automation:** Ansible for provisioning, configuration, and deployment automation  
-- **Hosting:** Linux-based servers (Ubuntu LTS) for production environments  
-- **Scripting:** Bash & Python scripts for setup, maintenance, and automation  
-- **Security:** JWT authentication, environment variables for secrets, and OWASP best practices  
+- **Version Control:** Git & GitLab  
+- **CI/CD Pipelines:** GitLab CI/CD automates backend/frontend build & tests  
+- **Containerization:** Dockerized backend  
+- **Infrastructure Automation:** Ansible (planned)  
+- **Hosting:** Linux-based (Ubuntu) servers  
+- **Scripting:** Bash & Python scripts  
+- **Security:** JWT, environment secrets, OWASP best practices  
 
 ---
 
 ## Architecture
 
-React Native (Expo)  
-↓  
-REST API + WebSocket (FastAPI)  
-↓  
-FastAPI Backend Server  
-↓  
+```text
+React Native (Expo)
+        ↓
+REST API + WebSocket (FastAPI)
+        ↓
+FastAPI Backend Server
+        ↓
 MongoDB Atlas (NoSQL)
 
 ---
 
 ## Key Features
 
-- User registration and login (JWT)  
-- Swipe left/right on dynamic content cards  
-- Real-time match notifications via WebSocket  
-- Collaborative “match” features (shared lists, actions, chats)  
-- Upload and browse custom content with metadata and images  
-- Extendable content types (recipes, recruitment, movies, travel, etc.)  
-- Ready for external API integration  
+- **User registration and login** (JWT)  
+- **Swipe left/right** on dynamic content cards  
+- **Real-time match notifications** via WebSocket  
+- **Collaborative “match” features** (shared lists, actions, chats)  
+- **Upload and browse custom content** with metadata and images  
+- **Extendable to multiple content types** (recipes, movies, jobs, travel)  
+- **Designed for external API integration**
 
 ---
 
 ## Scalability & Reusability
 
-Matchify is built to support **multiple content types and data sources**. Switching between verticals (e.g., Travel → Recipes → Jobs) requires only minor changes to content schemas and UI presentation.
-
-This makes Matchify a flexible, reusable engine for "swipe-to-match" discovery across different domains.
+Matchify supports **multiple verticals and content types**. You can swap between Travel, Food, Jobs, and more by changing only the content schemas and UI logic — the core engine remains unchanged.
 
 ---
 
 ## File Structure
 
-MATCHIFY - TBA  
-│  
-├── backend  
-├── Docs  
-├── frontend  
+```text
+MATCHIFY
+│
+├── backend       # FastAPI backend
+├── Docs          # Architecture & planning documents
+├── frontend      # React Native frontend
 
 ---
 
@@ -109,37 +123,42 @@ MATCHIFY - TBA
 
 | Method | Endpoint             | Description                     |
 |--------|----------------------|---------------------------------|
-| POST   | /api/auth/register   | Register a new user              |
-| POST   | /api/auth/login      | Login and receive JWT            |
-| GET    | /api/content         | Fetch swipeable content          |
-| POST   | /api/content/swipe   | Submit swipe decision            |
-| GET    | /api/matches         | Fetch mutual matches             |
-| POST   | /api/content         | Upload new content item          |
+| POST   | `/api/auth/register` | Register a new user             |
+| POST   | `/api/auth/login`    | Login and receive JWT           |
+| GET    | `/api/content`       | Fetch swipeable content         |
+| POST   | `/api/content/swipe` | Submit swipe decision           |
+| GET    | `/api/matches`       | Fetch mutual matches            |
+| POST   | `/api/content`       | Upload new content item         |
 
 ---
 
 ## Developer Tools
 
-- Expo Go (mobile testing)  
-- MongoDB Atlas (cloud DB)  
-- Postman or Insomnia (API testing)  
-- VS Code / PyCharm (backend)
+- **Expo Go** – Mobile testing  
+- **MongoDB Atlas** – Cloud database  
+- **Postman / Insomnia** – API testing  
+- **VS Code / PyCharm** – Backend development environments
 
 ---
 
 ## Documentation
 
-See the `/Docs` folder for:  
-- TECHPLAN.md – system architecture and API design  
-- ROADMAP.md – feature roadmap and development milestones  
-- LEARNINGPLAN.md – technical learning plan and resources  
-- SETUP.md – environment setup and installation instructions
+See the `/Docs` folder for:
+
+- `TECHPLAN.md` – System architecture and API design  
+- `ROADMAP.md` – Feature roadmap and milestones  
+- `LEARNINGPLAN.md` – Technical growth and research  
+- `SETUP.md` – Environment setup and instructions
 
 ---
 
 ## Developer Intent
 
-This project is built as part of my journey to become a full-time software developer, with a focus on backend architecture, API design, and scalable systems. I'm continuously learning, iterating, and applying industry practices to strengthen my understanding.
+This project is part of my professional journey toward **backend engineering**. It combines hands-on learning with **production-level practices** and aims to showcase skills in:
+
+- System architecture  
+- Real-time application design  
+- API-first development  
+- DevOps and CI/CD integration
 
 ---
-
