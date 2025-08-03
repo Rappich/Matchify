@@ -54,7 +54,7 @@ This project has two primary goals:
 - **Version Control:** Git & GitLab  
 - **CI/CD Pipelines:** GitLab CI/CD automates backend/frontend build & tests  
 - **Repository Hosting:** Primary repo on GitLab, with automatic mirroring to GitHub for visibility and portfolio  
-- **GitLab pipelines run on every commit to:
+- GitLab pipelines run on every commit to:
   - Build and test FastAPI backend
   - Lint and verify React Native frontend
 - **Containerization:** Dockerized backend  
