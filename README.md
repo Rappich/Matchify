@@ -79,7 +79,6 @@ This project has two primary goals:
 
 ## Architecture
 
-```text
 React Native (Expo)
         ↓
 REST API + WebSocket (FastAPI)
