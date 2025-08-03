@@ -109,7 +109,6 @@ Matchify supports **multiple verticals and content types**. You can swap between
 
 ## File Structure
 
-```text
 MATCHIFY
 │
 ├── backend       # FastAPI backend
