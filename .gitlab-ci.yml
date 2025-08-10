@@ -9,7 +9,7 @@ build-backend:
   stage: build
   image: python:3.11
   before_script:
-    - cd backend
+    - cd backend/backendAPI
   script:
     - pip install --upgrade pip
     - pip install -r requirements.txt
