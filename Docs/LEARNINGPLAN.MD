@@ -43,6 +43,17 @@
 - [ ] Learn environment variables and **secrets management** best practices  
 - [ ] Explore basic **logging** in Python and React Native  
 - [ ] Understand monitoring and alerting fundamentals (optional, future focus)  
+- [ ] Write small **Python or Bash automation scripts** for DevOps tasks (e.g., deployment, cleanup, backups)  
+
+### Networking Fundamentals
+- [ ] Understand the **OSI model** and map protocols to each layer  
+- [ ] Learn **IPv4 addressing and CIDR notation** (subnetting basics)  
+- [ ] Understand the difference between **TCP and UDP**  
+- [ ] Learn how **DHCP** assigns IP addresses  
+- [ ] Understand **firewalls** and basic port-based filtering rules  
+- [ ] Learn how **DNS** works (resolving names to IPs, common troubleshooting tools like `dig`/`nslookup`)  
+- [ ] Review how **HTTP/HTTPS** fit into the OSI model and how TLS/SSL works  
+- [ ] Practice using Linux networking commands (`ping`, `traceroute`, `netstat`, `ss`, `curl`) for troubleshooting  
 
 ### General Concepts
 - [ ] Understand the difference between **authentication and authorization**  
@@ -54,7 +65,6 @@
 ---
 
 ## Optional / Later Learning
-
 - [ ] Advanced React Native (performance optimization, animations)  
 - [ ] More advanced FastAPI features (dependency injection, middleware)  
 - [ ] Deep dive into WebSocket protocols and scaling real-time communication  
@@ -64,5 +74,3 @@
 - [ ] UI/UX design principles for mobile apps  
 - [ ] Advanced Docker and container orchestration (Kubernetes basics)  
 - [ ] Advanced Ansible playbooks and roles  
-
----
