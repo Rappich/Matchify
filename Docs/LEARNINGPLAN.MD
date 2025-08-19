@@ -45,6 +45,14 @@
 - [ ] Understand monitoring and alerting fundamentals (optional, future focus)  
 - [ ] Write small **Python or Bash automation scripts** for DevOps tasks (e.g., deployment, cleanup, backups)  
 
+### Cloud Fundamentals (Basic Coverage)
+- [ ] Understand the difference between **IaaS, PaaS, SaaS**  
+- [ ] Learn what **regions and availability zones** are in cloud providers  
+- [ ] Understand the **shared responsibility model** in the cloud  
+- [ ] Learn basics of **cloud networking** (VPC, security groups, load balancers)  
+- [ ] Explore **object storage** (e.g., AWS S3, Azure Blob, GCP Cloud Storage)  
+- [ ] Practice deploying a **FastAPI app** on a simple cloud service (Heroku, Render, or AWS Lightsail)  
+
 ### Networking Fundamentals
 - [ ] Understand the **OSI model** and map protocols to each layer  
 - [ ] Learn **IPv4 addressing and CIDR notation** (subnetting basics)  
@@ -54,6 +62,7 @@
 - [ ] Learn how **DNS** works (resolving names to IPs, common troubleshooting tools like `dig`/`nslookup`)  
 - [ ] Review how **HTTP/HTTPS** fit into the OSI model and how TLS/SSL works  
 - [ ] Practice using Linux networking commands (`ping`, `traceroute`, `netstat`, `ss`, `curl`) for troubleshooting  
+- [ ] (Cloud link) Understand how **cloud networking** relates to subnets, public/private access, and firewalls  
 
 ### General Concepts
 - [ ] Understand the difference between **authentication and authorization**  
@@ -69,8 +78,10 @@
 - [ ] More advanced FastAPI features (dependency injection, middleware)  
 - [ ] Deep dive into WebSocket protocols and scaling real-time communication  
 - [ ] Push notifications with Expo or Firebase Cloud Messaging  
-- [ ] Deployment strategies on cloud providers (AWS, Azure, DigitalOcean)  
+- [ ] Deployment strategies on **cloud providers** (AWS, Azure, DigitalOcean, GCP)  
 - [ ] End-to-end testing frameworks for frontend and backend  
 - [ ] UI/UX design principles for mobile apps  
-- [ ] Advanced Docker and container orchestration (Kubernetes basics)  
+- [ ] Advanced Docker and container orchestration (**Kubernetes basics**)  
 - [ ] Advanced Ansible playbooks and roles  
+- [ ] Cloud-native architectures (microservices, observability, service mesh)  
+- [ ] DevSecOps basics (shift-left security, IAM in cloud, security scanning)  
