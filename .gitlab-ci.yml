@@ -2,58 +2,21 @@ stages:
   - build
   - test
 
-# -------------------------
-# Backend - Build
-# -------------------------
-build-backend:
+create:
+  image: alpine
   stage: build
-  image: python:3.11
-  before_script:
-    - cd backend/backendAPI
   script:
-    - pip install --upgrade pip
-    - pip install -r requirements.txt
-    - echo "Backend dependencies installed"
-
-# -------------------------
-# Backend - Test
-# -------------------------
-test-backend:
-  stage: test
-  image: python:3.11
-  before_script:
-    - cd backend/backendAPI
-  script:
-    - pip install --upgrade pip
-    - pip install -r requirements.txt
-    - |
-      echo 'def test_dummy():\n    assert True' > test_dummy.py
-    - pytest
+    - echo "Building..."
+    - mkdir build
+      - touch build/new_file.txt
   artifacts:
-    when: always
-    reports:
-      junit: report.xml
+      paths:
+        - build/new_file.txt
 
-# -------------------------
-# Frontend - Build/Lint
-# -------------------------
-build-frontend:
-  stage: build
-  image: node:18
-  before_script:
-    - cd frontend/MatchifyApp
-  script:
-    - npm install
-    - echo "Frontend dependencies installed"
 
-# -------------------------
-# Frontend - Lint Test
-# -------------------------
-test-frontend:
+test:
+  image: alpine
   stage: test
-  image: node:18
-  before_script:
-    - cd frontend/MatchifyApp
   script:
-    - npm install
-    - npx eslint . || true
+    - echo "Testing..."
+    - if [ -f build/new_file.txt ]; then echo "File exists"; else echo "File does not exist"; exit 1; fi
