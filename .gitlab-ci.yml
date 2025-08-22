@@ -8,7 +8,7 @@ create:
   script:
     - echo "Building..."
     - mkdir build
-      - touch build/new_file.txt
+    - touch build/new_file.txt
   artifacts:
       paths:
         - build/new_file.txt
