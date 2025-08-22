@@ -2,21 +2,25 @@ stages:
   - build
   - test
 
-create:
-  image: alpine
+build_backend:
+  image: python:3.12
   stage: build
   script:
-    - echo "Building..."
-    - mkdir build
-    - touch build/new_file.txt
+    - echo "Installing dependencies..."
+    - python -m venv venv
+    - source venv/bin/activate
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+    - echo "Build step completed"
   artifacts:
-      paths:
-        - build/new_file.txt
+    paths:
+      - venv/
 
-
-test:
-  image: alpine
+test_backend:
+  image: python:3.12
   stage: test
+  dependencies:
+    - build_backend
   script:
-    - echo "Testing..."
-    - if [ -f build/new_file.txt ]; then echo "File exists"; else echo "File does not exist"; exit 1; fi
+    - source venv/bin/activate
+    - PYTHONPATH=. pytest tests/
