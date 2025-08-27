@@ -56,8 +56,10 @@ export default function LoginScreen() {
         index: 0,
         routes: [{ name: 'Home' }],
       });
-    } catch (error) {
+
       // Handle network or server errors
+    } catch (error) {
+      console.error("Login error:", error);
       Alert.alert('Error', 'Could not connect to server.');
     } finally {
       setLoading(false);
@@ -91,7 +93,7 @@ export default function LoginScreen() {
 
       {/* Link to go to Signup screen */}
       <TouchableOpacity onPress={() => navigation.navigate('Signup')} style={{ marginTop: 20 }}>
-        <Text style={{ color: '#0284c7', textAlign: 'center' }}>Don't have an account? Sign Up</Text>
+        <Text style={{ color: '#0284c7', textAlign: 'center' }}>Don&apos;t have an account? Sign Up</Text>
       </TouchableOpacity>
     </View>
   );

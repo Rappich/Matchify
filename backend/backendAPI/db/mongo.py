@@ -17,4 +17,3 @@ if not MONGO_URL or not MONGO_DB_NAME:
 # Create an asynchronous MongoDB client
 client = AsyncIOMotorClient(MONGO_URL)
 db = client[MONGO_DB_NAME]
-

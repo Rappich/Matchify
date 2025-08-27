@@ -8,6 +8,7 @@ from utils.jwt import create_access_token
 router = APIRouter(prefix="/api", tags=["Users"])
 user_service = UserService()
 
+
 # User registration endpoint
 @router.post("/register")
 async def register_user(request: RegisterRequest):
@@ -25,13 +26,14 @@ async def register_user(request: RegisterRequest):
         username=request.username,
         email=request.email,
         passwordHash=hashed_pw,  # use alias name
-        createdAt=datetime.utcnow()  # use alias name
+        createdAt=datetime.utcnow(),  # use alias name
     )
 
     # Save user and get id
     user_id = await user_service.create_user(new_user)
 
     return {"message": "User registered", "user_id": user_id}
+
 
 # User login endpoint
 @router.post("/login")
@@ -41,15 +43,15 @@ async def login_user(request: LoginRequest):
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
     access_token = create_access_token(
-        data={"sub": user.username},
-        expires_delta=timedelta(minutes=60)
+        data={"sub": user.username}, expires_delta=timedelta(minutes=60)
     )
 
     return {
         "access_token": access_token,
         "token_type": "bearer",
-        "username": user.username
+        "username": user.username,
     }
+
 
 # List all users endpoint
 @router.get("/users")

@@ -2,6 +2,7 @@ from db.mongo import db
 from models.user_model import User
 from typing import Optional, List
 
+
 class UserService:
     def __init__(self):
         self.collection = db["Users"]

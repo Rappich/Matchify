@@ -51,11 +51,15 @@ export default function SignupScreen() {
       Alert.alert('Signup Success', 'Account created! You can now log in.');
       navigation.goBack();
     } catch (error) {
-      // Handle network or server errors
-      Alert.alert('Error', 'Could not connect to server.');
+      console.error("Signup error:", error);
+      Alert.alert(
+        "Error",
+        error instanceof Error ? error.message : "Could not connect to server."
+      );
     } finally {
       setLoading(false);
     }
+
   };
 
   return (
