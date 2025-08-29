@@ -13,7 +13,7 @@ build_backend:
     - python -m venv venv
     - source venv/bin/activate
     - pip install --upgrade pip
-    - pip install -r requirements.txt
+    - pip install -r backend/backendAPI/requirements.txt
     - echo "Build step completed"
   artifacts:
     paths:
@@ -26,4 +26,4 @@ test_backend:
     - build_backend
   script:
     - source venv/bin/activate
-    - PYTHONPATH=. pytest tests/
+    - PYTHONPATH=backend/backendAPI pytest backend/backendAPI/tests/
