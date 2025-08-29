@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# File with commit message
+COMMIT_MSG_FILE=$1
+
+# Read commit message
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+# Control commit format
+if ! grep -qE "^(feat|fix|chore|docs|style|refactor|test|perf)(\([a-z0-9_-]+\))?: .+" "$COMMIT_MSG_FILE"; then
+  echo " Commit message does not follow Conventional Commits format."
+  echo "Format: type(optional scope): message"
+  echo "Example: feat(login): add JWT authentication"
+  exit 1
+fi

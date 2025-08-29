@@ -1,0 +1,46 @@
+#!/bin/bash
+
+echo "Running pre-commit checks..."
+
+# --- Backend (Python) ---
+echo "Activating backend virtualenv..."
+source backend/backendAPI/venv/bin/activate
+
+echo "Checking Python formatting with black..."
+black --check backend/backendAPI
+if [ $? -ne 0 ]; then
+  echo "Black formatting failed. Run 'black backend/backendAPI' in venv env to fix."
+  deactivate
+  exit 1
+fi
+
+echo "Linting Python code with flake8..."
+flake8 backend/backendAPI
+if [ $? -ne 0 ]; then
+  echo "Flake8 linting errors found. Fix them before committing."
+  deactivate
+  exit 1
+fi
+
+echo "Checking for secrets with detect-secrets..."
+detect-secrets audit backend/backendAPI/.secrets.baseline
+if [ $? -ne 0 ]; then
+  echo "New secrets detected! Please clean them up before committing."
+  deactivate
+  exit 1
+fi
+
+
+deactivate # Deactivate the virtual environment
+
+# --- Frontend (React Native) ---
+echo "Linting frontend with ESLint..."
+cd frontend/MatchifyApp || exit 1
+npx --no-install eslint "**/*.{js,jsx,ts,tsx}"
+if [ $? -ne 0 ]; then
+  echo "ESLint errors found. Fix them before committing."
+  exit 1
+fi
+cd - > /dev/null || exit 1
+
+echo "All checks passed!"
