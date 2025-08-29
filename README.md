@@ -50,9 +50,10 @@ This project has two primary goals:
 - Image upload support and external API integration
 
 ### DevOps & Infrastructure
+### DevOps & Infrastructure
 - **Version Control:** Git & GitLab  
 - **CI/CD Pipelines:** GitLab CI/CD automates backend/frontend build & tests  
-- **Repository Hosting:** Primary repo on GitLab, with automatic mirroring to GitHub for visibility and portfolio  
+- **Repository Hosting:** The primary repository is hosted on GitLab ([rappich-group/Matchify](https://gitlab.com/rappich-group/Matchify)) for development, CI/CD, and full commit history. The project is automatically mirrored to GitHub ([Rappich/Matchify](https://github.com/Rappich/Matchify)) to showcase it in my portfolio and for public visibility.
 - GitLab pipelines run on every commit to:
   - Build and test FastAPI backend
   - Lint and verify React Native frontend
